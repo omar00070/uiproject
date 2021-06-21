@@ -36,7 +36,7 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 
 export const WebcamCapture = ({setText}) => {
     const webcamRef = React.useRef(null);
-    // const [devices, setDevices] = React.useState([]);
+    const [devices, setDevices] = React.useState([]);
 
     const handleDevices = React.useCallback(
     mediaDevices =>
