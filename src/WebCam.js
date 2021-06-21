@@ -44,12 +44,14 @@ export const WebcamCapture = ({setText}) => {
     [setDevices]
     );
 
-    // React.useEffect(
-    // () => {
-    //     navigator.mediaDevices.enumerateDevices().then(handleDevices);
-    // },
-    // [handleDevices]
-    // );
+    
+    React.useEffect(
+    () => {
+        // MediaDevices.getUserMedia()
+        // MediaStreamTrack.getSources(handleDevices);
+    },
+    [handleDevices]
+    );
 
     const capture = React.useCallback(
     () => {
