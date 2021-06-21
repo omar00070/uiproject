@@ -9,7 +9,7 @@ var onSuccess = function(stream) {
 }
 
 var onError = function(error) {
-  console.log('Error :(');
+  console.log('Error :(', error);
 }
 
 function App() {
