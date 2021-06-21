@@ -36,7 +36,7 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 
 export const WebcamCapture = ({setText}) => {
     const webcamRef = React.useRef(null);
-    const [devices, setDevices] = React.useState([]);
+    // const [devices, setDevices] = React.useState([]);
 
     const handleDevices = React.useCallback(
     mediaDevices =>
@@ -44,12 +44,12 @@ export const WebcamCapture = ({setText}) => {
     [setDevices]
     );
 
-    React.useEffect(
-    () => {
-        navigator.mediaDevices.enumerateDevices().then(handleDevices);
-    },
-    [handleDevices]
-    );
+    // React.useEffect(
+    // () => {
+    //     navigator.mediaDevices.enumerateDevices().then(handleDevices);
+    // },
+    // [handleDevices]
+    // );
 
     const capture = React.useCallback(
     () => {
@@ -59,7 +59,6 @@ export const WebcamCapture = ({setText}) => {
         const realData = block[1].split(',')[1]
         const blob = b64toBlob(realData, contentType);
         const formData = new FormData();
-        console.log(devices)
         formData.append('file', blob)
         get_string(formData)
         .then(res => {
